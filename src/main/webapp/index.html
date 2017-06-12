@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T9Blogger</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="blogger.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery-2.1.3.js"></script>
+<!-- <script src="blogger.js"></script> -->
+</head>
+<body>
+	<div class="container-fluid">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			  <div class="container-fluid">
+				<div class="navbar-header">
+				  <a class="navbar-brand" href="#">T9BloggerV2MR</a>
+				</div>
+				<form class="navbar-form navbar-left">
+				  <div class="input-group">
+					<input type="text" class="form-control" placeholder="Search" id="searchInput">
+					<div class="input-group-btn">
+					  <button class="btn btn-default" type="button" id="searchBtn">
+						<i class="glyphicon glyphicon-search"></i>
+					  </button>
+					</div>
+				  </div>
+				</form>
+				
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li>
+					<select class="bootstrap-select" style="margin-top:15px;font-size:15px" id="myblogsFilter">
+						<option value="My Blogs" selected="selected">My Blogs</option>
+						<option value="All Blogs">All Blogs</option>
+					</select>
+					</li>
+					<li><a href="#"id="newBlogBtn_loggedIn">Create Blog</a></li>
+					<li><a href="#"id="newBlogBtn_loggedOut">Create Blog</a></li>
+					<li><a href="#"id="updateProfileBtn">Update Profile</a></li>
+					<li><a href="#"id="logoutBtn"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					<li><a href="#"id="loginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			  </div>
+			</nav>
+			
+			<div class="main">
+				<div id = "homeScreenBody">
+					<h3 align="center">Recent Posts</h3>
+					<div id = "postDetails">
+						<div id = "post0">
+							<h4 id ="post0Heading" style="font-weight: bold;"></h4>
+							<p id ="post0Content">
+								
+							<p>
+							<div id ="post0meta"> 
+									<span id = "post0author"></span>
+									<time id = "post0time"></time>
+							</div>
+							<a href="#" style="font-size: 10px;color:blue;"id = "commentOptionspost0"> </a>
+							
+						</div>
+						<br>
+						<br>
+						<div id = "post1">
+							<h4  id ="post1Heading" style="font-weight: bold;"></h4>
+							<p id ="post1Content">
+								
+							<p>
+							<div id ="post1meta"> 
+									<span id = "post1author"></span> 
+									<time id = "post1time"></time>
+							</div>
+							<a href="#" style="font-size: 10px;color:blue;"id = "commentOptionspost1"></a>
+						</div>
+						<br>
+						<br>
+						<div id = "post2">
+							<h4 id ="post2Heading" style="font-weight: bold;"></h4>
+							<p id ="post2Content">
+								
+							<p>
+							<div id ="post2meta">
+									<span id = "post2author"></span> 
+									<time id = "post2time"></time>
+							</div>
+							<a href="#" style="font-size: 10px;color:blue;"id = "commentOptionspost2"></a>
+						</div>
+						<br>
+						<br>
+					</div>
+					<div id = "pagingOptions">
+							<a href="#" id="first" style="display:inline;"> First Page| </a>
+							<a href="#" id="prev" style="display:inline;"> Previous Page| </a>
+							<a href="#" id="next" style="display:inline;"> Next Page| </a>
+							<a href="#" id="last" style="display:inline;"> Last Page </a>
+					</div>
+				</div>
+		<!--	</div> -->
+			
+				<div id='loginScreen'>
+					<h4>Welcome! Login here</h4>
+					<form name="loginForm" id="loginForm">
+						<div>
+							<label class="title">Username:</label>
+							<input type="text" id="signinUserName" name="userId">
+						</div>
+						<div>
+							<label class="title">Password:</label>
+							<input type="password" id="signInpassword" name="password">
+						</div>
+						<div colspan="2" align="right" >
+							<input type="submit" id="submitButton" name="submitButton" value="Submit">
+						</div>
+					</form>
+					<a href="#" id="signUp">Don't have a login ? Sign Up</a> 
+				</div>
+			
+				<div id='signUpScreen'>
+					<h2>Signing up is easy :)</h2>
+					<table>
+						<tr>
+							<td>Email(Userid):</td>
+							<td><input id='userid'/></td>
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td><input type='password' id='signuppassword'></td>
+						</tr>
+						<tr>
+							<td>Firstname:</td>
+							<td><input id='firstname' /></td>
+						</tr>
+						<tr>
+							<td>Lastname:</td>
+							<td><input id='lastname' /></td>
+						</tr>
+						<tr>
+							<td>Nick Name(visible name):</td>
+							<td><input id='nickname' /></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="right"><button id="saveSignUpDetailsBtn">Sign up</button></td>
+						</tr>
+					</table>
+				</div>
+			
+				<div id='profileUpdateScreen'>
+				<h2>Update your profile</h2>
+					<table>
+						<tr>
+							<td>Password:</td>
+							<td><input type='password' id='updatedpassword'></td>
+						</tr>
+						<tr>
+							<td>Firstname:</td>
+							<td><input id='updatedfirstname' /></td>
+						</tr>
+						<tr>
+							<td>Lastname:</td>
+							<td><input id='updatedlastname' /></td>
+						</tr>
+						<tr>
+							<td>Nick Name(visible name):</td>
+							<td><input id='updatednickname' /></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="right"><button id="saveProfileBtn">Save Details</button></td>
+						</tr>
+					</table>
+				</div>
+		
+				<div id = "newBlogScreen">
+					<h3>New Blog</h3>
+					<div class="form-group">
+						<label>Blog title</label>
+						<input type="text" class="form-control" id="newBlogTitle" placeholder="Blog Title">
+					</div>
+							   
+					<div class="form-group">
+						<label>Description</label>
+						<textarea rows="10" class="form-control" id="blogDescriptionIInput" placeholder="Blog Description"></textarea>
+					</div>		  
+					<button type="submit" id="submitNewBlogbtn">Submit</button>	
+				</div>
+				
+				<div id = "errorScreen">
+					<p id ="errorMsg">
+							
+					<p>	
+				</div>
+			
+				<div id = "blogAndCommentsScreen">
+					
+					<div id = "selectedPost">
+						<!--<a href="#" id ="selectedHeading" data-toggle="modal" data-target="#selectedDescriptionModal">SELECTED POST TITLE</a> -->
+						<h3 id ="selectedHeading" style="font-weight: bold;"></h3>
+						<p id ="selectedContent">
+							
+						<p>
+					</div>
+					<br>
+					<br>
+					<div id ="addCommentOption">
+						<div class="form-group">
+							<label>Add a comment</label>
+							<textarea rows="3" class="form-control" id="commentInput" placeholder="Your Comment"></textarea>
+						</div>		  
+						<button type="submit" id="submitCommentbtn">Post Comment</button>
+					</div>
+					<a href="#" id="loginToComment">Please login/signup to comment</a> 
+					<br>
+					<br>
+					<div id = "commentDetails">
+						<h4 style ="text-decoration: underline"id ="commentHeading">Comments</h4>
+						<select id = "commentSortingOrder">
+							<option value="oldest">Oldest First</option>
+							<option value="newest">Recent First</option>
+						</select>
+						<hr />
+						<div id ="commentPosts">
+						
+						</div>
+						<a href="#" id="loadMoreComments">Load More Comments</a> 
+					</div>
+				</div>
+			</div>
+	</div>
+	<script src="jquery-dateFormat.js"></script>
+	<script src="blogger.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+#loginScreen,#profileUpdateScreen, #signUpScreen ,#newBlogForm,#newBlogScreen,#test2,#loggedInOptions,#selectedPost,#first,#prev,#next,#last,#addCommentOption,#commentDetails,#loginToComment,#loadMoreComments,#errorScreen{
+	display: none;
+}
+H1 { text-align: center }
+#loginScreen{
+	float: right;
+    padding: 15px;
+}
+#profileOptionsBtn{
+   position:absolute;
+   top:45px;
+   right:50px;
+}
+#signUp{
+	float: right;
+    padding: 15px;
+	clear :right;
+}
+
+.form-group ,#postDetails{
+    max-width: 75%;
+	
+}
+#postDetails{
+	margin-left:15%;
+	
+}
+#newBlogForm,#newBlogScreen {
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 15px;
+}
+#post0meta,#post1meta,#post2meta{
+	margin-left: 60%;
+	font-size: 12px;
+	font-style: italic;
+}
+.commentmeta{
+	margin-left: 40%;
+	font-size: 12px;
+	font-style: italic;
+}
+#selectedPost,#addCommentOption,#loginToComment,#commentDetails {
+	margin-left:10%;
+}
+
+#commentHeading{
+	display: inline;
+}
+#commentSortingOrder{
+	display: inline;
+	margin-left:25%;
+}
+.main{
+	margin-top:6%;
+}
+#errorMsg{
+	margin-left:40%;
+	margin-top:15%;
+	font-size: 25px;
+}
